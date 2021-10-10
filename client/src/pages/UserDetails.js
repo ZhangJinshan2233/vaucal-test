@@ -18,8 +18,8 @@ function UserDetailsPage() {
         myAxios.get(`/users/${id}`)
             .then(res => {
                 let user = res.data.user;
+                setIsLoading(false);
                 setUser(user);
-                setIsLoading(false)
                 emailInputRef.current.value=user.email
                 firstNameInputRef.current.value=user.firstName;
                 lastNameInputRef.current.value=user.lastName

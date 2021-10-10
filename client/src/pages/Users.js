@@ -11,8 +11,9 @@ const UsersPage = () => {
         myAxios.get('/users')
             .then(res => {
                 let users = res.data.users;
+                setIsLoading(false);
                 setUsers(users);
-                setIsLoading(false)
+                
             })
     }, [])
 
